@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Mania</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-book-open"></i>
+                <div>Novel<span>Mania</span></div>
+            </div>
+            <div class="links" id="menuContainer">
+                <ul id="menuList">
+                    <li ><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Collection</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <i onclick="togglemenu()" class="fa-solid fa-bars hamburg"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container">
+            <div class="banner">
+                <div class="product">
+                    <div id="bd" class="cover"></div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h3>Explore Limited Edition</h3>
+                <h1>NOVEL MAINIA</h1>
+                <h2><span id="role"></span></h2>
+                
+                <p>Welcome to Our Novel showcase!<br>Dive into the captivating worlds of our carefully selected novels,each offering a unique journey through rich storytellings and unforgettable characters.From heart-wrenching romances to thrilling adventures,there's something here for every reader.Explore tables that challenge the mind,evoke deep emotions,and ignite the imagination.
+                <p>
+
+                <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-amazon"></i></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+
+                <div class="A"><button  onclick="changeImage()">Check Out More</button></div>
+                <div class="order">
+                        <p>$299.0</p>
+                        <button>Pre-Order Now</button>
+                </div>
+            </div>    
+        </div>
+    </main>
+
+    <script>
+        // Change image script
+        var x = 0;
+        const MultiImages = ["novel2.png", "novel3.png", "novel4.png", "novel5.png", "novel1.png"];
+        var imageslength = MultiImages.length;
+
+        function changeImage() {
+            document.getElementById("bd").style.backgroundImage = "url(" + MultiImages[x] + ")";
+            x = (x + 1) % imageslength; // Loop through images
+        }
+
+        // If you want to set a specific image instead
+        document.getElementById("bd").style.backgroundImage = "url(novel1.png)";
+
+        // Start automatic image change
+        //  setInterval(changeImage, 3000); // Change image every 3 seconds
+        // setInterval(changeRole, 2000); //
+
+        // Menu toggle script
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px"; // Start hidden
+
+        function togglemenu() {
+            if (menuList.style.maxHeight === "0px" || menuList.style.maxHeight === "") {
+                menuList.style.maxHeight = "200px"; // Set maxHeight to allow visibility
+                menuList.classList.add('active'); // Add active class to show menu
+                menuList.style.display = "block"; //trystep2:adding this whole line
+            } else {
+                menuList.style.maxHeight = "0px"; // Hide the menu
+                menuList.classList.remove('active'); // Remove active class
+                menuList.style.display = "none"; //trystep3:adding this whole line
+            }
+        }
+
+        //varity
+        const roles = ["Premium Edition",'For :','Remarkable Soul',"Exclusive Release",'One Time'];
+                let index = 0;
+        
+                function changeRole() {
+                    index = (index + 1) % roles.length;
+                    document.getElementById("role").textContent = roles[index];
+                }
+        
+                setInterval(changeRole, 2000); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Yeseva One", serif;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(backimg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+nav {
+    width: 100%;
+    height: 6vh;
+    position: sticky;
+    z-index: 1000; /* Ensure nav is on top */
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Set position relative for proper z-index stacking */
+}
+
+.logo {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+
+.logo i {
+    margin: 4px;
+    color: white;
+}
+
+.logo div span {
+    color: rgb(0, 247, 255);
+    margin: 5px;
+}
+
+.logo div {
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: 550;
+    margin: 0 0 0 10px;
+}
+
+.hamburg {
+    cursor: pointer;
+    color: transparent;
+    font-size: clamp(1.5rem, 0.5rem + 1.5vw, 3rem);
+}
+
+
+.nav-container .links{
+    display:flex;;position: absolute;top: 10px;right: 30px;
+}
+
+.links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}                               /* here,whole nav links are copy by our previous well 884px wise */    
+
+.links ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: .3s linear;
+}
+
+nav ul li a:hover{
+    color: rgb(17, 0, 255);
+    border-bottom: 2px solid #0072ff;
+}
+
+
+main {
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .content{
+    color:white;
+    width: 50%;                 /*1) may be first 5 line addon after ,one line add on 440px media change */
+    min-height: 100px;
+}
+
+.content h3{
+    font-size: clamp(1rem,1rem + 5vw,1.8rem);
+    color: black;
+}
+
+.content h1{
+    display: inline-block;
+    font-size: clamp(2rem,1rem + 5vw,3.5rem); /*2) 5 line add */
+    color: rgb(5, 9, 242);
+}
+
+.content h1:hover{
+    scale:1.05;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px white); /*3) 5 line add */
+}
+
+.content h2{
+    font-size: clamp(2rem,1rem + 2vw,3.5rem); /*4) 4 line add */
+    color: rgb(5, 9, 242);
+}
+
+.content p{
+    font-size:1.2rem;    
+    color: black;  /*5) 4 line */
+    margin:10px 0;
+
+}
+
+
+/* ######Product CSS############### */
+.banner {
+    width: 500px;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.banner .product {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    bottom: 125px;
+    left: 30%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.banner .product .cover {
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 2px;
+    background: url(novel1.png) var(--left) 0;
+    background-size: auto 100%;
+    width: 305px;
+    aspect-ratio: 4.3 / 6;
+    transition: var(--transition-duration, 3s);
+    --left: 307px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px white;
+}
+
+.banner .product .cover:hover {
+    animation: anime1 1s ease-in-out alternate;
+    --left: 610px;
+}
+
+.social-links i{
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid black;
+    border-radius: 10px 5px 10px 5px;
+    color: black;
+    margin: 0px 0px 0px 50px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover{
+    scale: 1.2;
+    filter: drop-shadow(0 0 10px white);
+    color:rgb(5, 9, 242);
+    
+}
+
+.A button{
+    
+    display: inline-block;
+    width: 80%;
+    height: 6vh;
+    margin: 2% 0% 0% 0%;
+    background-color:transparent;
+    color: rgb(5, 9, 242);;
+    border: 2px solid black;
+    outline: none;
+    font-size: 120%;
+    font-weight: 800;
+    border-radius: 30px 2px 30px 2px;
+    transition: 0.2s linear;
+}
+
+.A button:hover{
+    scale: 1.1;
+    color: #3000ff;
+    border: 2px solid #3000ff;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow:0 0 30px #3000ff ;
+}
+
+.order p{display: inline-block;margin-left: 20px;font-weight: 600;}
+.order button{
+    width: 30%;
+    height: 4.5vh;
+    margin: 10px;
+    background-color: #3000ff;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 500;
+    border-radius: 5px 5px 5px 5px;
+    transition: 0.2s linear;
+}
+
+.order button:hover{
+    scale: 1.1;
+    cursor: pointer;
+    color: white;
+    border: 2px solid ;
+    border-radius: 15px 2px 15px 2px;
+    background-color:  #3000ff;
+    font-weight: 700;
+    box-shadow:0 0 30px white ;
+    
+}
+
+
+
+@keyframes anime1 {
+    0% {
+        --left: 307px;
+    }
+    50% {
+        --left: 443px;
+    }
+    100% {
+        --left: 610px;
+    }
+}
+
+.banner .product:hover .cover {
+    cursor: pointer;
+}
+
+/* Responsivity */
+@media screen and  (max-width: 440px) {
+    .nav-container .links {
+        display: block;
+        top: 30px;
+        width: 100%;
+        right: 0;
+    }
+
+    .links ul {
+        width: 100%;
+        background-color: #9706f2;
+        margin-bottom: 10px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        right: 20px; 
+        display: none;   /* trystep1: to add display: none */
+    }
+
+    .links ul li {
+        display: block;      
+        padding: 10px;
+        margin: 10px auto; /* Centered */
+        padding: 4px 0 14px 180px;
+    }
+
+    .links ul li a{
+        color: white;
+    }
+    .hamburg {
+        display: block;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top:6px;
+        right: 15px;
+    }
+
+    .main-container {
+        display: inline-block;
+    }
+
+    .main-container .content{
+        color:white;
+        width: 50%;             /* copy whole only this 5 line,no. 2 */
+        min-height: 100px;
+    }
+    
+
+    .banner {
+        height: 64vh; /* Adjusted height for mobile */
+    }
+
+    .banner .product {
+        left: 60%; /* Center for smaller screens */
+        top: 40px;
+        transform: translateX(-50%); /* Keep it centered */
+    }
+
+    .banner .product .cover {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .main-container .content{width:100%;} /* effect add no.1, whole this line */
+
+    .content h3 {
+        display:none;
+    }
+
+    .content h1 {
+        margin-left: 10%;
+        color: white;
+        font-size: clamp(1.5rem, 1rem + 4vw, 1rem);
+        display: inline;
+    }
+
+    .content h2 {
+        font-size: clamp(1.2rem, 1rem + 2vw, 0rem);
+        color: rgb(14, 6, 246);
+        margin:0;  
+        display: inline-block;
+    }
+
+    .content h2 span{display: inline-block;
+        margin: 0 0 0 10%;
+        width: 100%;
+    }
+
+    .content p {
+        font-size: 0.8rem;
+        margin-left: 5%;
+        color: black;
+        margin:0 0 0 5%;
+    }
+
+    .social-links i{
+        display: inline-flex;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        color:white;
+        margin-left: 12%;
+    }
+
+    .A button{
+        margin:4% 0 0 58%;
+        width: 40%;
+        height: 5vh;
+        font-size: 120%;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .A button:hover{
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .order{
+        display: inline;
+        width: 68%;
+        position: absolute;top:90%;left:10px;}
+    .order p{
+        display: inline-block;
+        font-size: 20px;
+        color: white;
+    }
+    .order button{
+        display: inline;
+        margin:9% 0 0 2%;
+        width: 50%;
+    }
+
+    .order button:hover{
+        scale: none;
+    }
+
+}
+
+@media screen and  (min-width:441px) and (max-width:884px) {
+    .content h1{
+        font-size: clamp(2rem,1rem + 4vw,3.5rem);
+    }
+
+    .social-links i{
+        margin: 5px 0px 5px 35px;
+    }
+
+    .A button{
+        width: 94%;
+    }
+
+    .order button{
+        width: 50%;
+    }
+
+    .order button:hover{
+        width: 60%;
+    }
+
+    .logo div span{color: rgb(0, 247, 255);}
+}
+
